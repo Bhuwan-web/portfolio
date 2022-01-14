@@ -12,5 +12,15 @@
       {% csrf_token %} {{form.as_p}}
       <input type="submit" value="{{submit}}" />
     </form>
+    <p>
+
+      Click here to <a href={% if submit == "Login" %} 
+      {% url 'accounts:signup' %} 
+      {% else %} 
+      {% url 'accounts:login' %} 
+      {% endif %}
+      >{% if submit == "Login"%} Signup {%else%} Login {%endif%}</a>
+      
+    </p>
   </body>
 </html>
