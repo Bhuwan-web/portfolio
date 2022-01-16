@@ -1,26 +1,34 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
+    <link rel="stylesheet" href={% static 'accounts.css' %}>
+    <link rel="stylesheet" href={% static 'base.css' %}>
   </head>
   <body>
-    <h1>{{heading}}</h1>
-    <form method="post">
-      {% csrf_token %} {{form.as_p}}
-      <input type="submit" value="{{submit}}" />
-    </form>
-    <p>
-
-      Click here to <a href={% if submit == "Login" %} 
-      {% url 'accounts:signup' %} 
-      {% else %} 
-      {% url 'accounts:login' %} 
-      {% endif %}
-      >{% if submit == "Login"%} Signup {%else%} Login {%endif%}</a>
-      
-    </p>
+    <section class="login-card p-center d-in_b">
+      <h1 class="heading account-head">{{heading}}</h1>
+      <div class="form-container p-rel">
+        <form method="post" class="account-form">
+          {% csrf_token %} {{form.as_p}}
+          <button type="submit" class="btn btn-light">{{submit}}</button>
+        </form>
+        
+          <p class="aside">
+            
+            Click here to <a href={% if submit == "Login" %} 
+            {% url 'accounts:signup' %} 
+            {% else %} 
+            {% url 'accounts:login' %} 
+            {% endif %}
+            >{% if submit == "Login"%} Signup {%else%} Login {%endif%}</a>
+            
+          </p>
+      </div>
+      </section>
   </body>
 </html>

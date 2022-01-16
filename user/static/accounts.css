@@ -1,0 +1,78 @@
+.heading {
+  text-align: center;
+}
+.account-head {
+  border-radius: inherit;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background: #e6e6ff;
+  padding-bottom: 1rem;
+}
+section {
+  font-size: 2rem;
+}
+section > h1 {
+  font-size: 2em;
+}
+body {
+  position: relative;
+}
+.login-card {
+  min-height: 70vh;
+  text-align: center;
+  min-width: 50vw;
+  border: 2px solid chocolate;
+  border-radius: 1em;
+}
+
+form {
+  margin: 2rem;
+  line-height: 1em;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.3em;
+}
+form * {
+  margin: 0.3em;
+  /* max-height: 60vh; */
+}
+input {
+  height: 2em;
+  border: 1px solid cornflowerblue;
+}
+.btn {
+  font-size: 1em;
+  width: 5em;
+  height: 1.5em;
+}
+
+.btn-light {
+  background-color: #cce6cc;
+  border: lightblue 0.1rem solid;
+  border-radius: 0.5em;
+}
+.aside {
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 80%);
+}
+form > ul {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.helptext {
+  display: block;
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+}
+
+.form-container form {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

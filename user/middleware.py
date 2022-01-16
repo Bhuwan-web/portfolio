@@ -19,3 +19,5 @@ class LoginMiddleware:
     def process_view(self, request, view_func, view_args, view_kwargs):
         if not request.user.is_authenticated and not request.path.__contains__("accounts"):
             return redirect(reverse_lazy("accounts:login"))
+        if request.user.is_authenticated and "accounts" in request.path:
+            return redirect(reverse_lazy("profile:profile"))
