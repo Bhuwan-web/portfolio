@@ -9,5 +9,13 @@
   <body>
     <h2>The Profile View</h2>
     <h3>All the profiles will be displayed here</h3>
+    {% with object as profile %} {{profile.bio}}
+    <h3>
+      {% with profile.basic_info as user %} {{user.first_name}} {{user.email}}
+      {{user.last_name}} {% endwith %}
+    </h3>
+    {% endwith %}
+    <p><a href={%url 'profile:user_info'%}>Add</a>your basic Information here</p>
+    <p><a href={%url 'profile:user_profile'%}>Add</a> Profile info</p>
   </body>
 </html>

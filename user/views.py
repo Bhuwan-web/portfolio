@@ -21,5 +21,5 @@ class SignupView(CreateView):
 class CustomLoginView(LoginView):
     model = User
     template_name = "user/accounts.html"
-    next_page = reverse_lazy("home:profile")
+    next_page = reverse_lazy("profile:profile")
     extra_context = {"title": "Login Form", "heading": "Login Form", "submit": "Login"}
