@@ -1,15 +1,27 @@
 <!DOCTYPE html>
+
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile| {{user}}</title>
+<link rel="stylesheet" href={% static 'profile.css' %}>
   </head>
   <body>
     <h2>The Profile View</h2>
     <h3>All the profiles will be displayed here</h3>
-    {% with object as profile %} {{profile.bio}}
+    {% with object as profile %} 
+    <div class="home-page">
+      <div class="back-dp-container">
+        <img src={{profile.background_dp.url}} alt="Background Pic" class="back-dp">
+      </div>
+       <div class="dp-container">
+        <img src={{profile.dp.url}} alt="Profile Pic" class="dp">
+      </div>
+    </div>
+    {{profile.bio}}
     <h3>
       {% with profile.basic_info as user %} {{user.first_name}} {{user.email}}
       {{user.last_name}} {% endwith %}
