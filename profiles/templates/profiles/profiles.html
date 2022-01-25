@@ -1,21 +1,51 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile| {{user}}</title>
+    <link rel="stylesheet" href={% static 'profile.css' %}> <link
+    rel="stylesheet" href={% static 'base.css'%}>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Revalia&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h2>The Profile View</h2>
-    <h3>All the profiles will be displayed here</h3>
-    {% with object as profile %} {{profile.bio}}
-    <h3>
-      {% with profile.basic_info as user %} {{user.first_name}} {{user.email}}
-      {{user.last_name}} {% endwith %}
-    </h3>
+    {% with object as profile %}
+    <div class="home-page">
+      <div class="back-dp-container">
+        <img
+          src="{{profile.background_dp.url}}"
+          alt="Background dp"
+          class="back-dp"
+        />
+      </div>
+      <div class="home-page__grid">
+        <h2 class="heading-primary">{{profile.role}}</h2>
+        <div class="primary-skills-1">
+          <img
+            src="{{profile.tech1.url}}"
+            alt="Background dp"
+            class="back-dp"
+          />
+        </div>
+        <div class="dp-container">
+          <img src="{{profile.dp.url}}" alt="Profile Pic" class="dp" />
+        </div>
+        <div class="primary-skills-2">
+          <img src="{{profile.tech2.url}}" alt="Django Logo" />
+        </div>
+        <div class="name">
+          <div class="name__user">{{user.first_name}} {{user.last_name}}</div>
+          <div class="name__skills">Django|React|Rest</div>
+        </div>
+      </div>
+    </div>
     {% endwith %}
-    <p><a href={%url 'profile:user_info'%}>Add</a>your basic Information here</p>
-    <p><a href={%url 'profile:user_profile'%}>Add</a> Profile info</p>
   </body>
 </html>
