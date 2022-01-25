@@ -1,0 +1,56 @@
+.git_repos {
+  font-size: 2rem;
+  background-color: #5b4545;
+  margin: -1.5rem auto;
+  padding-top: 3rem;
+  color: #eee;
+}
+
+.header-secondary {
+  font-size: 5.5rem;
+  text-align: center;
+  padding-bottom: 2.4rem;
+}
+.git_repos__list {
+  /* margin: 0 auto; */
+  display: flex;
+  flex: row;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.git_repo {
+  background-color: #180808;
+  width: 34.4rem;
+  height: 16.4rem;
+  /* margin: 5.1rem 5.1rem 0 0; */
+  margin-bottom: 5.1rem;
+  padding: 0.5rem;
+  display: inline-block;
+  border-radius: 1rem;
+  border-spacing: 5.1rem 5.1rem;
+}
+.header-tertiary {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+.git_repo__identity {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.git_repo:not(:last-child) {
+  margin-right: 5.1rem;
+}
+.git_repo__description {
+  font-size: 1.5rem;
+  overflow: auto;
+  height: 6rem;
+  padding-inline-start: 1rem;
+}
+.git_repo__footer {
+  text-align: center;
+  justify-content: space-evenly;
+
+  display: flex;
+  font-size: 1.2rem;
+}
